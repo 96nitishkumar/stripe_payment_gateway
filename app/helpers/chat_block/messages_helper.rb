@@ -1,0 +1,2 @@
+module ChatBlock::MessagesHelper
+end

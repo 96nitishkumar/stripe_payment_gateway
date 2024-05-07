@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HomeAppliction</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+     <script src="https://unpkg.com/@cometchat-pro/chat@2.0/build/cometchat.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+

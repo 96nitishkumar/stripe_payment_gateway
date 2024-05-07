@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+<!-- Include Stripe.js library -->
+
+<!-- Create a form to collect card details -->
+<form id="payment-form">
+  <div class="form-group">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+
+  <button id="submit-button">Submit Payment</button>
+</form>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script type="text/javascript">
+var secret ="pi_3P9Q6BSIgpMsEPiT0Wfbjeej_secret_BF5nVOEnfSZjrSAdUGgOJ3wbr";
+const stripe = Stripe('pk_test_51O5iNPSIgpMsEPiTnZn6RaL540z8J8FgsgYbLjncqsDGYYiGpM2yA4q8lLwNd0tOlkoGf8cWpU5PGnD00Cy6YIkr00u5X7SjiP');
+const options = {
+  clientSecret: secret,
+  appearance: {
+    theme: 'stripe'
+  },
+};
+const elements = stripe.elements(options);
+const paymentElement = elements.create('payment');
+console.log(paymentElement)
+paymentElement.mount('#card-element');
+const paymentRequest = stripe.paymentRequest({
+  country: 'US',
+  currency: 'usd',
+  total: {
+    label: 'Demo total',
+    amount: 1099,
+  },
+  requestPayerName: true,
+  requestPayerEmail: true,
+});
+</script>
+ 
+</body>
+</html>

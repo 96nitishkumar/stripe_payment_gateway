@@ -1,0 +1,2 @@
+module CometChat::ChatsHelper
+end

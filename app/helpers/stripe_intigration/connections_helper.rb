@@ -1,0 +1,2 @@
+module StripeIntigration::ConnectionsHelper
+end

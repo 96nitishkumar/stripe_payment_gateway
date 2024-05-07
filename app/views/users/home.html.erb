@@ -1,0 +1,16 @@
+<div id="chatContainer"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cometChatUser = <%= raw @comet_chat_user.to_json %>;
+    const authToken = '<%= @comet_chat_auth_token %>';
+
+    CometChat.login(cometChatUser.uid, authToken).then(
+      user => {
+        console.log('Login successful:', { user });
+      },
+      error => {
+        console.log('Login failed with error:', { error });
+      }
+    );
+  });
+</script>

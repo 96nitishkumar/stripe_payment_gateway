@@ -1,0 +1,2 @@
+module BusBlock::BusesHelper
+end

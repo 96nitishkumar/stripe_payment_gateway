@@ -1,0 +1,2 @@
+module StripeIntigration::PaymentIntentsHelper
+end

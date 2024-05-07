@@ -1,0 +1,2 @@
+module PostBlock::PostsHelper
+end
