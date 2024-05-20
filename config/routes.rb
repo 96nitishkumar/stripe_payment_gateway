@@ -45,9 +45,12 @@ Rails.application.routes.draw do
   namespace :stripe_intigration do
     get 'send_amount_to_connections',to:'payment_intents#send_amount_to_connections'
     post 'create_connections',to:'connections#create_connections'
+    get 'index', to:'connections#index'
     post 'payment_intent',to:'payment_intents#payment_intent'
     post 'payment_refound_with_payment_intent',to:'refunds#payment_refound_with_payment_intent'
     post 'refund_amount_with_charge',to:'refunds#refund_amount_with_charge'
+    post 'create_payment_int', to: 'payment_intents#create_payment_int'
+    post 'create_charge_pay', to: 'payment_intents#create_charge_pay'
   end
 
   namespace :comet_chat do 
@@ -72,4 +75,7 @@ Rails.application.routes.draw do
   namespace :booking_block do
     resources :bus_bookings
   end
+
+  get 'webhooks/stripe', to: 'webhooks#stripe'
+
 end

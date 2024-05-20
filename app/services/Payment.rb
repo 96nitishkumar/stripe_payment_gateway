@@ -1,8 +1,11 @@
 module Payment
+	
+
+
 	def self.send_amount_to_connections(total_amount,owner)
 		total_amount = total_amount*100
-    commission_amount = (total_amount * 0.2).to_i
-    amount_to_hotel_owner = total_amount - commission_amount	
+    	commission_amount = (total_amount * 0.2).to_i
+    	amount_to_hotel_owner = total_amount - commission_amount	
     	charge = Stripe::Charge.create({
     	  amount: total_amount,
     	  currency: 'usd',
