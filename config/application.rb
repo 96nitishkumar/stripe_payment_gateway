@@ -23,5 +23,6 @@ module HomeAppliction
     #
     # config.time_zone = "Central Time (US & Canada)"
     config.eager_load_paths << Rails.root.join("lib")
+    config.hosts << "8cfe-2401-4900-1c0f-f5ec-674-623f-8992-68d0.ngrok-free.app"
   end
 end

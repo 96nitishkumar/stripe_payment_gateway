@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
-	before_action :authentication
-	before_action :set_room, except: [:index,:create,:properties, :user_properties,:check_avaliable_date,:check_available_rooms]
+	# before_action :authentication
+	# before_action :set_room, except: [:index,:create,:properties, :user_properties,:check_avaliable_date,:check_available_rooms]
 
 	def create
 		room = @current_user.rooms.build(room_params)

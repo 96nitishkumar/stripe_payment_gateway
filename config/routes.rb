@@ -76,6 +76,6 @@ Rails.application.routes.draw do
     resources :bus_bookings
   end
 
-  get 'webhooks/stripe', to: 'webhooks#stripe'
+  post 'webhooks/receive', to: 'webhooks#receive'
 
 end

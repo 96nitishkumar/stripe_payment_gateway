@@ -62,7 +62,10 @@ module StripeIntigration
 	  		    transfer_data:{
 	  		    	destination: "acct_1PHd1KQH6eriu07E" # product belongs to which vender that connect Account id 
 	  		    	amount: 200 # Transfer amount to paricular vender account if amount is not mention that time by default taken above all amount
-	  		    	#if amount is give in transfer data that amount(200) is go to particular vender and amount(1300) goes to main stripe account 
+	  		    	#if amount is give in transfer data that amount(200) is go to particular vender and amount(1300) goes to main stripe account
+	  		    	#in this the flow of application is first it all amount(1300) send to the Stripe dashboad and again from there it send amount
+	  		    	# 200 to the vender or paticular connected account in this flow is
+	  		    	# customer => main stripe dashboard => connected account(vender account)
 	  		    } 
 
   		  	}
